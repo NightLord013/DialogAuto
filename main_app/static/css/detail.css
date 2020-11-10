@@ -1,0 +1,181 @@
+.links {
+    background-color: #747776;
+    text-align: center;
+    margin-bottom: 3vw;
+    height: 2.15vw;
+}
+
+.links a {
+    text-decoration: none;
+    color: black;
+    font-size: 1.8vw;
+    margin-left: 1.5vw;
+    margin-right: 1.5vw;
+    font-family: 'Poppins', sans-serif;
+    position: relative;
+    top: 0.1vw;
+}
+
+.detail {
+    margin-left: 6vw;
+    margin-right: 6vw;
+    font-family: 'Poppins', sans-serif;
+}
+
+.detail h5 {
+    font-size: 3vw;
+    font-weight: 700;
+}
+
+.detail .main-photo {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.detail .main-photo img {
+    width: 40.55vw;
+    height: 30vw;
+}
+
+.detail .main-photo .extra-photo img{
+    width: 13.331vw;
+    height: 9vw;
+}
+
+.detail .information {
+    display: inline-block;
+    margin-left: 10vw;
+}
+
+.detail .information h3, .detail .information h4, .detail .information a, .detail .information p {
+    margin: 0;
+    margin-bottom: 0.7vw;
+    font-size: 2.2vw;
+}
+
+.detail .information h3{
+    font-size: 3vw;
+    color: red;
+}
+
+.detail .information h4 {
+    font-size: 1.6vw;
+    text-decoration: line-through;
+}
+
+.detail .information a{
+    background-color: #446FAE;
+    color: black;
+    text-decoration: none;
+    padding-left: 0.5vw;
+    padding-right: 0.5vw;
+}
+
+.detail .information a:hover{
+    background-color: #547FBE;
+}
+
+.detail .description h5{
+    font-size: 3vw;
+    font-weight: 700;
+    margin: 0;
+    margin-top: 4vw;
+}
+
+.detail .description  .content-text {
+    width: 82vw;
+    margin-left: 2vw;
+}
+
+.detail .description  .content-text p {
+    font-size: 1.7vw;
+}
+
+.other-auto {
+    margin-bottom: 2vw;
+    text-align: center;
+}
+
+.other-auto h5 {
+    font-size: 3vw;
+    font-weight: 700;
+    margin: 0;
+    margin-top: 4vw;
+    margin-bottom: 2vw;
+    text-align: left;
+}
+
+.other-auto .list {
+    border: 2px solid black;
+    width: 15vw;
+    display: inline-block;
+    padding: 0.2vw;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+}
+
+.other-auto .list img {
+    width: 14vw;
+    height: 9vw;
+    margin-bottom: 1vw;
+}
+
+.other-auto .list p {
+    text-align: left;
+    font-size: 1.2vw;
+    margin: 0;
+}
+
+/*
+.popup {
+	position: absolute;
+	height:100%;
+	width:100%;
+	top:0;
+	left:0;
+	display:none;
+	text-align:center;
+}
+
+.popup_bg {
+	background:rgba(0,0,0,0.3);
+	position:fixed;
+	z-index:1;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	width: auto;
+    height: auto;
+}
+
+
+.popup_img {
+	position: fixed;
+	z-index:2;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%,-50%);
+	max-height: 90%;
+}
+
+.popup_img {
+  pointer-events: none;
+}
+
+.slide-right {
+    position: fixed;
+    font-size: 10vw;
+    right: 2vw;
+    top: 5vw;
+    display: inline-block;
+}
+
+.slide-left {
+    position: fixed;
+    font-size: 10vw;
+    left: 2vw;
+    top: 5vw;
+    display: inline-block;
+}*/

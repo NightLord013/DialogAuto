@@ -1,0 +1,34 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Вход - Dialog Expert</title>
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+</head>
+<body>
+<div id="logo">
+    <img src="{% static 'img/logotype.png' %}">
+</div>
+<div class="element">
+    <div class="login">
+        <p>Еше незарегестрированы?</p>
+        <p><a href="{% url 'register' %}">Регистрация</a></p>
+    </div>
+    <form method="POST" action="{% url 'login' %}">
+        <h5>Авторизация</h5>
+        {% csrf_token %}
+        <div>
+            <p>E-mail:</p>
+            {{ form.username }} <!--Поле ввода e-mail-->
+        </div>
+        <div>
+            <p>Пароль:</p>
+            {{ form.password }}
+        </div>
+        <div class="submit">
+            <input type='submit' value="Войти">
+        </div>
+    </form>
+</div>
+</body>
+</html>

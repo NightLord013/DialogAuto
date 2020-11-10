@@ -1,0 +1,156 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Roboto sans-serif;
+}
+
+header {
+    position: relative;
+    margin-right: 2vw;
+    margin-left: 2vw;
+    height: 8vw;
+}
+
+header #logo {
+    margin-top: 2vw;
+    margin-left: 2vw;
+    display: inline-block;
+    float: left;
+}
+
+header #logo img {
+    width: 10vw;
+}
+
+header #favorite {
+    display: inline-block;
+    position: absolute;
+    right: 18vw;
+    margin-top: 3vw;
+    font-size: 1.7vw;
+}
+
+header #favorite a{
+    text-decoration: none;
+    color: black;
+}
+
+header #favorite a img {
+    width: 1.8vw;
+    margin-right: 0.5vw;
+}
+
+header #private {
+    display: inline-block;
+    position: absolute;
+    right: 0;
+    margin-top: 3vw;
+    font-size: 1.7vw;
+}
+
+header #private a{
+    text-decoration: none;
+    color: black;
+}
+
+header #private a img {
+    width: 1.8vw;
+    margin-right: 0.5vw;
+}
+
+header #login{
+    display: inline-block;
+    position: absolute;
+    right: 2vw;
+    margin-top: 3vw;
+    font-size: 1.7vw;
+}
+
+header #login a{
+    text-decoration: none;
+    color: black;
+}
+
+header #login a img {
+    width: 1.8vw;
+    margin-right: 0.5vw;
+}
+
+.links {
+    background-color: #747776;
+    text-align: center;
+    margin-bottom: 3vw;
+    height: 2.15vw;
+}
+
+.links a {
+    text-decoration: none;
+    color: black;
+    font-size: 1.8vw;
+    margin-left: 1.5vw;
+    margin-right: 1.5vw;
+    font-family: 'Poppins', sans-serif;
+    position: relative;
+    bottom: 0.2vw
+}
+
+.links #menu {
+    position: absolute;
+    top: 10.15vw;
+    left: 36.5vw;
+    background-color: #646766;
+    width: 15vw;
+    z-index: 0;
+    display: none;
+}
+
+.links a:hover {
+    color: #444444;
+}
+
+
+footer{
+    background-image: url("../img/footer_img.png");
+    height: 30vw;
+}
+
+footer .social_networks {
+    padding-top: 2vw;
+    margin-left: 3vw;
+}
+
+footer .social_networks a {
+    margin-right: 0.5vw;
+}
+
+footer .social_networks a img {
+    width: 2vw;
+}
+
+footer .first-list-links, footer .second-list-links {
+    display: inline-block;
+    text-align: center;
+    font-size: 1.8vw;
+    margin-top: 3vw;
+}
+
+footer .first-list-links p, footer .second-list-links p {
+    margin: 0;
+    margin-bottom: 1vw;
+    text-align: left;
+}
+
+footer .first-list-links p a, footer .second-list-links p a{
+    text-decoration: none;
+    color: black;
+
+}
+
+footer .first-list-links{
+    margin-left: 15vw;
+    vertical-align: top;
+}
+
+footer .second-list-links{
+    margin-left: 35vw;
+}

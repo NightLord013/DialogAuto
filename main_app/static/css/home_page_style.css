@@ -1,0 +1,209 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Martel+Sans&display=swap');
+
+.filter {
+    background-color: #C4C4C4;
+    font-family: 'Poppins', sans-serif;
+}
+
+.filter form {
+    text-align: center;
+    margin-bottom: 1vw;
+}
+
+.filter form .choose-brand-and-model{
+    display: inline-block;
+    margin-right: 9vw;
+}
+
+.filter form .choose-brand-and-model p {
+    font-size: 1.1vw;
+    text-align: left;
+    margin: 0;
+    margin-bottom: 0.5vw;
+}
+
+.filter form .choose-brand-and-model p select{
+    width: 14vw;
+    height: 1.9vw;
+    font-size: 1.1vw;
+    padding-left: 0.5vw;
+}
+
+.filter form .choose-price-and-mileage{
+    display: inline-block;
+    margin-left: 1vw;
+    margin-right: 10vw;
+}
+
+.filter form .choose-price-and-mileage p {
+    font-size: 1.1vw;
+    text-align: left;
+    margin: 0;
+    margin-bottom: 0.5vw;
+}
+
+.filter form .choose-price-and-mileage p input{
+    width: 9.5vw;
+    height: 1.5vw;
+    font-size: 1.1vw;
+    padding-left: 0.5vw;
+}
+
+.filter form .buttons {
+    display: inline-block;
+}
+
+.filter form .buttons p input[type='submit']{
+    width: 15vw;
+    height: 4vw;
+    background-color: #446FAE;
+    border-radius: 6px;
+    font-size: 1.4vw;
+    outline: none;
+    border: none;
+}
+
+.filter form .buttons p {
+    margin: 0;
+    margin-bottom: 1vw;
+}
+
+.filter form .buttons p a {
+    text-decoration: none;
+    color: black;
+    font-size: 1vw;
+}
+
+.filter form .buttons p a img {
+    width: 1.5vw;
+}
+
+.filter form .buttons p a:hover {
+    color: #555;
+}
+
+
+
+
+h2 {
+    margin-left: 4vw;
+    font-size: 3vw;
+    font-weight: 400;
+}
+
+.all-entries {
+
+}
+
+
+
+.entry {
+    font-size: 1.2vw;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 4vw;
+    display: inline-block;
+    margin-left: 15vw;
+    color: black;
+}
+
+.entry img {
+    width: 20vw;
+    position: relative;
+    left: 0.3vw;
+    height: 15.15vw;
+    display: inline-block;
+    vertical-align: top;
+    margin: 0;
+    padding: 0;
+}
+
+.entry .all-parametrs {
+    border-top: 1px solid black;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+    position: relative;
+    display: inline-block;
+    width: 50vw;
+    height: 15vw;
+    text-align: right;
+
+}
+
+.entry .all-parametrs .all-characteristics{
+    border-bottom: 2px solid black;
+    margin-left: 2vw;
+    margin-right: 2vw;
+    text-align: left;
+}
+
+.entry .all-parametrs .all-characteristics p {
+    margin: 0;
+    margin-bottom: 0.3vw;
+}
+
+.entry .all-parametrs .all-characteristics h5 {
+    font-size: 1.5vw;
+    color: #424EB8;
+    margin-bottom: 1.5vw;
+    margin-top: 1.2vw;
+    font-weight: 400;
+    margin-left: 0.8vw;
+}
+
+.entry .all-parametrs .all-characteristics button {
+    position: absolute;
+    right: 0.2vw;
+    top: 0.2vw;
+    background-color: white;
+    border: none;
+    outline: none;
+}
+
+.entry .all-parametrs .all-characteristics button img {
+    width: 1.8vw;
+    height: 1.8vw;
+}
+
+.entry .all-parametrs .all-characteristics .first-characteristics {
+    display: inline-block;
+    margin-right: 3vw;
+    margin-left: 1vw;
+}
+
+.entry .all-parametrs .all-characteristics .second-characteristics {
+    display: inline-block;
+    margin-right: 3vw;
+    margin-left: 3vw;
+}
+
+.entry .all-parametrs .all-characteristics .third-characteristics {
+    display: inline-block;
+    margin-left: 3vw;
+}
+
+.entry .all-parametrs #price {
+    margin: 0;
+    font-size: 2vw;
+    margin-top: 0.5vw;
+    margin-right: 1vw;
+}
+
+
+.paginator {
+    text-align: center;
+    margin-bottom: 1vw;
+}
+
+.paginator a {
+    font-size: 2vw;
+    font-family: 'Martel Sans', sans-serif;
+    text-decoration: none;
+    color: black;
+    padding: 0.1vw 1vw 0.1vw 1vw;
+    margin-left: 0.5vw;
+    margin-right: 0.5vw;
+}
+
+

@@ -1,0 +1,81 @@
+.links {
+    background-color: #747776;
+    text-align: center;
+    margin-bottom: 3vw;
+    height: 2.15vw;
+}
+
+.links a {
+    text-decoration: none;
+    color: black;
+    font-size: 1.8vw;
+    margin-left: 1.5vw;
+    margin-right: 1.5vw;
+    font-family: 'Poppins', sans-serif;
+    position: relative;
+    top: 0.1vw;
+}
+
+h5 {
+    font-size: 3vw;
+    font-weight: 700;
+    margin: 0;
+    margin-left: 8vw;
+    margin-bottom: 5vw;
+    margin-top: 4vw;
+}
+
+.about-company-info{
+
+}
+
+
+.about-company-info .about-company-image {
+    width: 40vw;
+    height: 30vw;
+    float: left;
+    margin-left: 10vw;
+    margin-right: 2vw;
+}
+
+.about-company-info p{
+    font-size: 1.69vw;
+    margin-right: 10vw;
+}
+
+.about-company-info p .blue {
+    color: blue;
+    font-weight: 700;
+}
+
+.about-company-info p .red {
+    color: red;
+    font-weight: 700;
+}
+
+.about-company-info .extra-info-about-company {
+    margin-left: 10vw;
+}
+
+.icons {
+    background-color: #3A55B6;
+    text-align: center;
+    margin-bottom: 2vw;
+}
+
+.icons .icon_1 {
+    display: inline-block;
+    margin-top: 1vw;
+    margin-left: 0.5vw;
+    margin-right: 0.5vw;
+}
+
+.icons .icon_1 img {
+    width: 10vw;
+    height: 10vw;
+}
+
+.icons .icon_1 p {
+    font-size: 1.8vw;
+    margin: 0;
+}

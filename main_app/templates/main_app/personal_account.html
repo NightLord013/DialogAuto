@@ -1,0 +1,43 @@
+{% extends 'main_app/base.html' %}
+{% load static %}
+
+{% block title %}Профиль{% endblock %}
+{% block style %}{% static 'css/personal_account.css'%}{% endblock %}
+
+{% block content %}
+    <h5>Личный кабинет</h5>
+    <div class="full-name">
+        <p>ФИО: {{ user.full_name }}</p>
+    </div>
+    <div class="phone_number">
+        <p>Номер телефона: {{ user.phone }}</p>
+    </div>
+    <div class="email">
+        <p>Email: {{ user.email }}</p>
+    </div>
+    <div class="date_of_registration">
+        <p>Дата регистрации: {{ user.date_joined }}</p>
+        <p>Последний вход: {{ user.last_login }}</p>
+    </div>
+    <form method="POST" action="{% url 'personal_account' %}">
+    {% csrf_token %}
+        <div class="old_password">
+            <p>Старый пароль: </p>
+            {{ form.old_password }}
+        </div>
+        <div class="new_password1">
+            <p>Новый пароль: </p>
+            {{ form.new_password1 }}
+        </div>
+        <div class="new_password2">
+            <p>Повторите новый пароль: </p>
+            {{ form.new_password2 }}
+        </div>
+    <input type="submit" value="Сменить">
+    </form>
+    <div class="exit">
+        <a href="{% url 'logout' %}">Выход</a>
+    </div>
+
+
+{% endblock %}

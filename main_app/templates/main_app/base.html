@@ -1,0 +1,70 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Главная{% endblock %} - Dialog Expert</title>
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link rel="stylesheet" href="{% block style %}{% endblock %}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    <header>
+        <div id = 'logo'>
+            <a href="{% url 'home' %}"><img src="{% static 'img/logotype.png' %}"></a>
+        </div>
+        {% if user.is_authenticated %}
+        <div id = 'favorite'>
+            <a href="#"><img src="{% static 'img/favorite.png' %}" align="top">Избранные</a>
+        </div>
+
+        <div id = 'private'>
+            <a href="{% url 'personal_account' %}"><img src="{% static 'img/private.png' %}" align="top">Личный кабинет</a>
+        </div>
+        {% else %}
+         <div id="login">
+            <a href="{% url 'login' %}" align="top"><img src="{% static 'img/private.png' %}" align="top">Войти</a>
+         </div>
+        {% endif %}
+    </header>
+    <div class="links">
+        <a href="{% url 'home' %}">Автомобили</a>
+        <a id="servises">Онлайн услуги</a>
+        <div id="menu">
+            <a href="{% url 'tec_service' %}">Запись на ТО</a>
+        </div>
+        <a href="{% url 'about_company' %}">О компании</a>
+        <a href="{% url 'contacts' %}">Контакты</a>
+    </div>
+    {% block content %}{% endblock %}
+    <footer>
+        <div class="social_networks">
+            <a href="#"><img src="{% static 'img/vk_logo.png' %}"></a>
+            <a href="#"><img src="{% static 'img/instagram_logo.png' %}"></a>
+            <a href="#"><img src="{% static 'img/twitter_logo.png' %}"></a>
+        </div>
+        <div class="first-list-links">
+            <p><a href="#">Новости</a></p>
+            <p><a href="{% url 'about_company' %}">О компании</a></p>
+            <p><a href="#">Вакансии</a></p>
+            <p><a href="#">Акции</a></p>
+            <p><a href="#">Карта сайта</a></p>
+            <p><a href="#">Как добраться?</a></p>
+        </div>
+        <div class="second-list-links">
+            <p><a href="{% url 'home' %}">Автомобили</a></p>
+            <p><a href="#">Сервис</a></p>
+            <p><a href="#">Страхование</a></p>
+            <p><a href="#">Кредитование</a></p>
+            <p><a href="#">Трайв-ин</a></p>
+        </div>
+    </footer>
+    <script>
+        $(document).ready(function(){
+            $('#servises').on("click", function(){
+                $('#menu').slideToggle();
+            });
+        });
+    </script>
+</body>
+</html>

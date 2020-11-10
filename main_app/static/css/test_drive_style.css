@@ -1,0 +1,95 @@
+.links {
+    background-color: #747776;
+    text-align: center;
+    margin-bottom: 3vw;
+    height: 2.15vw;
+}
+
+.links a {
+    text-decoration: none;
+    color: black;
+    font-size: 1.8vw;
+    margin-left: 1.5vw;
+    margin-right: 1.5vw;
+    font-family: 'Poppins', sans-serif;
+    position: relative;
+    top: 0.1vw;
+}
+h5 {
+    font-size: 3vw;
+    font-weight: 700;
+    margin: 0;
+    margin-left: 8vw;
+    margin-bottom: 5vw;
+    margin-top: 4vw;
+}
+
+form {
+    margin-right: 5vw;
+    margin-left: 8vw;
+}
+
+form .full-name, form .brand_and_model, form .date_time, form .phone_number, form .extra-info{
+    margin-bottom: 2vw;
+}
+
+form .full-name div, form .brand_and_model div, form .date_time div{
+    display: inline-block;
+    margin-right: 4vw;
+    margin-left: 4vw;
+    font-size: 1.5vw;
+    font-weight: bold;
+}
+
+form .phone_number, form .extra-info{
+    margin-right: 4vw;
+    margin-left: 4vw;
+    font-size: 1.5vw;
+    font-weight: bold;
+}
+
+form .full-name div p, form .brand_and_model div p, form .date_time div p, form .phone_number p, form .extra-info p {
+    margin: 0;
+}
+
+form .full-name div input, form .brand_and_model div input, form .date_time div input, form .phone_number input{
+    margin-top: 0.5vw;
+    margin-left: 2vw;
+    padding-left: 1vw;
+    width: 15vw;
+    height: 1.5vw;
+    font-size: 1.4vw;
+}
+
+form .extra-info textarea{
+    margin-top: 1vw;
+    margin-left: 2vw;
+    padding-left: 1vw;
+    width: 70vw;
+    height: 20vw;
+    font-size: 1.4vw;
+    resize: none;
+}
+
+form .full-name div label{
+}
+
+form .date_time div:last-child{
+    position: relative;
+    right: 0.5vw;
+}
+
+form input[type='submit'] {
+    background-color: #426B92;
+    font-size: 1.4vw;
+    color: black;
+    width: 10vw;
+    height: 2vw;
+    position: relative;
+    left: 67.5vw;
+    margin-bottom: 2vw;
+}
+
+form input[type='submit']:hover{
+    background-color: #527BA2;
+}

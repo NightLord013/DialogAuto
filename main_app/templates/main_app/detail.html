@@ -1,0 +1,81 @@
+{% extends 'main_app/base.html' %}
+{% load static %}
+{% load humanize %}
+
+{% block title %}{{ entry.brand }} {{ entry.model }}{% endblock %}
+{% block style %}{% static 'css/detail.css' %}{% endblock %}
+
+{% block content %}
+    <div class="detail">
+        <h5>{{ entry.brand }} {{ entry.model }}</h5>
+        <div class="main-photo">
+            <img id="main-photo" src="{{ entry.main_photo.url }}">
+            <div class="extra-photo">
+                <img id="photo_2" src="{{ entry.photo_2.url }}">
+                <img id="photo_3" src="{{ entry.photo_3.url }}">
+                <img id="photo_4" src="{{ entry.photo_4.url }}">
+            </div>
+        </div>
+        <div class="information">
+            <h3>{{ entry.price| intcomma }} ₽</h3>
+            <h4>{{ entry.discount| intcomma }} ₽</h4>
+            <a href="#">Купить</a>
+            <a href="{% url 'test_drive' entry.pk %}">Заказать тест-драйв</a>
+            <p>Двигатель: {{ entry.engine_type }}, {{ entry.engine }} л.</p>
+            <p>Мощность: {{ entry.power }} л.с.</p>
+            <p>Трансмиссия: {{ entry.transmission }}</p>
+            <p>Привод: {{ entry.drive_wheel }}</p>
+            <p>Тип кузова: {{ entry.body_type }}</p>
+            <p>Цвет: {{ entry.color }}</p>
+            <p>Год: {{ entry.year }}</p>
+            <p>Пробег: {{ entry.mileage }} км.</p>
+            <p>Руль: {{ entry.steering_wheel }}</p>
+        </div>
+        <div class="description">
+            <h5>Описание</h5>
+            <div class="content-text">
+                <p>{{ entry.description }}</p>
+            </div>
+        </div>
+        {% comment %}<div class="other-auto">
+            <h5>Другие авто</h5>
+            {% for car in recomendation %}
+            <a href="{% url 'detail' car.pk %}" class="list">
+                <img src="{{ car.main_photo.url }}">
+                <p>{{ car.brand }} {{ car.model }}, {{ car.year }}</p>
+                <p>{{ car.mileage| intcomma }}км.</p>
+                <p>{{ car.price| intcomma }} ₽</p>
+            </a>
+            {% endfor %}
+        </div>{% endcomment %}
+
+    </div>
+    <!--<script>
+        $(document).ready(function() { // Ждём загрузки страницы
+
+        $(".main-photo").click(function(){	// Событие клика на маленькое изображение
+            var a = $('#main-photo').attr('src');
+            var b = $('#photo_2').attr('src');
+            var c = $('#photo_3').attr('src');
+            var d = $('#photo_4').attr('src');
+            var img = [a,b,c,d]
+            for(var i = 0;i<5;i++){
+                console.log(img[i])
+            }
+            $("body").append("<div class='popup'>"+ //Добавляем в тело документа разметку всплывающего окна
+                             "<div class='popup_bg'></div>"+
+                             "<p class='slide-left'>&lt;</p>"+// Блок, который будет служить фоном затемненным
+                             "<img src='"+img[2]+"' class='popup_img' />"+ // Само увеличенное фото
+                             "<p class='slide-right'>&gt;</p>"+
+                             "</div>");
+            $(".popup").fadeIn(200); // Медленно выводим изображение
+            $(".popup_bg").click(function(){	// Событие клика на затемненный фон
+                $(".popup").fadeOut(200);	// Медленно убираем всплывающее окн
+          setTimeout(function() {	// Выставляем таймер
+                  $(".popup").remove(); // Удаляем разметку всплывающего окна
+                }, 200);
+            });
+        });
+    });
+    </script>-->
+{% endblock %}

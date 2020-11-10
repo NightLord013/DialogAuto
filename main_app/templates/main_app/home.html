@@ -1,0 +1,72 @@
+{% extends 'main_app/base.html' %}
+{% load static %}
+
+{% block style %}{% static 'css/home_page_style.css' %}{% endblock %}
+
+{% block content %}
+    <section class="filter" xmlns="http://www.w3.org/1999/html">
+        <form method="get">
+            <div class="choose-brand-and-model">
+                <p>{{ form.brand.label }}</p>
+                <p>{{ form.brand }}</p>
+                <p>{{ form.model.label }}</p>
+                <p>{{ form.model }}</p>
+            </div>
+            <div class="choose-price-and-mileage">
+                <p>Цена, руб.</p>
+                <p>{{ form.min_price }}-{{ form.max_price }}</p>
+                <p>Пробег, км.</p>
+                <p>{{ form.min_mileage }}-{{ form.max_mileage }}</p>
+            </div>
+            <div class="buttons">
+                <p><input type="submit" value="Показать"></p>
+                <p><a href="{% url 'home' %}"><img src="{% static 'img/reset.png' %}">Сбросить</a></p>
+            </div>
+        </form>
+    </section>
+    <h2>Авто с пробегом</h2>
+    <section class="all-entries">
+        {% for car in cars %}
+            <a href="{% url 'detail' car.pk %}" class="entry">
+                <img src="{{ car.main_photo.url }}" align="middle">
+                <div class="all-parametrs">
+                    <div class="all-characteristics">
+                        <h5>{{ car.brand }} {{ car.model }}</h5>
+                        <button><img src="{% static 'img/no-favorite.png' %}"></button>
+                        <div class="first-characteristics">
+                            <p>{{ car.year }} год</p>
+                            <p>{{ car.mileage }} км.</p>
+                            <p>{{ car.engine }} л.({{ car.power }} л.с.)</p>
+                        </div>
+                        <div class="second-characteristics">
+                            <p>{{ car.body_type }}</p>
+                            <p>{{ car.drive_wheel }}</p>
+                            <p>{{ car.transmission }}</p>
+                        </div>
+                        <div class="third-characteristics">
+                            <p>{{ car.color }}</p>
+                            <p>{{ car.engine_type }}</p>
+                            <p>{{ car.steering_wheel }}</p>
+                        </div>
+                    </div>
+                    <p id = 'price'>{{ car.price }} ₽</p>
+                </div>
+            </a>
+        {% endfor %}
+    </section>
+    <div class="paginator">
+        {% if page.has_previous %}
+        <a href="?page={{ page.previous_page_number }}">&lt;</a>
+        {% endif %}
+        {% for p in page.paginator.page_range %}
+            {% if p == page.number %}
+                <a href="?page={{ p }}">{{ p }}</a>
+            {% else %}
+                <a href="?page={{ p }}">{{ p }}</a>
+            {% endif %}
+        {% endfor %}
+        {% if page.has_next %}
+            <a href="?page={{ page.next_page_number }}">&gt;</a>
+        {% endif %}
+    </div>
+{% endblock %}

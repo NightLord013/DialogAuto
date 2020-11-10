@@ -1,0 +1,98 @@
+#logo {
+    margin-top: 2vw;
+    margin-left: 2vw;
+    display: inline-block;
+}
+
+#logo img {
+    width: 10vw;
+}
+
+.element {
+    background-color: #628EFF;
+    width: 60vw;
+    height: 30vw;
+    margin-left: 20vw;
+    margin-top: 5vw;
+    border-radius: 18px;
+}
+
+.element .login {
+    display: inline-block;
+    text-align: center;
+    margin-left: 7vw;
+    position: relative;
+    bottom: 15vw;
+    margin-right: 6vw;
+}
+
+.element .login p {
+    font-size: 2vw;
+    margin: 0;
+}
+
+.element .login p a {
+    text-decoration: none;
+    color: #3A55B6;
+}
+
+.element .login p a:hover {
+    color: #4A65C6;
+}
+
+.element form {
+    display: inline-block;
+    background-color: #C4C4C4;
+    width: 30vw;
+    height: 35vw;
+    position: relative;
+    bottom: 2.5vw;
+    border-radius: 13px;
+}
+
+.element form h5 {
+    text-align: center;
+    margin: 0;
+    margin-top: 1vw;
+    font-size: 1.8vw;
+}
+
+.element form p {
+    font-size: 1.6vw;
+    margin: 0;
+    margin-bottom: 0.5vw;
+    margin-top: 0.5vw;
+    margin-left: 3vw;
+}
+
+.element form p span{
+    color: red;
+}
+
+.element form input{
+    width: 18.5vw;
+    height: 1.5vw;
+    margin-left: 6vw;
+    font-size: 1.3vw;
+    padding-left: 0.5vw;
+}
+
+.element form .submit {
+    text-align: center;
+    margin-top: 2vw;
+}
+
+.element form .submit input[type='submit']{
+    width: 15vw;
+    height: 2vw;
+    background: linear-gradient(90deg, rgba(248, 21, 21, 0.47) 0%, rgba(46, 35, 179, 0.6) 100%);
+    border: none;
+    border-radius: 13px;
+    font-size: 1.3vw;
+    outline: none;
+    margin: 0;
+}
+
+.element form .submit input[type='submit']:hover {
+    background: linear-gradient(90deg, rgba(258, 51, 51, 0.47) 0%, rgba(76, 65, 209, 0.6) 100%);
+}

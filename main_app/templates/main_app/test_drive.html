@@ -1,0 +1,81 @@
+{% extends 'main_app/base.html' %}
+{% load static %}
+
+{% block title %}Запись за тест-драйв {{ car.brand }} {{ car.model }}{% endblock %}
+
+{% block style %}{% static 'css/test_drive_style.css' %}{% endblock %}
+
+{% block content %}
+    <h5>Запись за тест-драйв {{ car.brand }} {{ car.model }}</h5>
+    <form method="post">
+        {% csrf_token %}
+        <div class="full-name">
+            <div>
+                {{ form.name.label }}:
+                <p>{{ form.name }}</p>
+            </div>
+            <div>
+                {{ form.surname.label }}:
+                <p>{{ form.surname }}</p>
+            </div>
+            <div>
+                {{ form.patronymic.label }}:
+                <p>{{ form.patronymic }}</p>
+            </div>
+        </div>
+        <div class="date_time">
+            <div>
+                {{ form.data.label }}:
+                <p>{{ form.data }}</p>
+            </div>
+            <div>
+                {{ form.time.label }}:
+                <p>{{ form.time }}</p>
+            </div>
+        </div>
+        <div class="phone_number">
+            {{ form.phone_number.label }}
+            <p>{{ form.phone_number }}</p>
+        </div>
+        <div class="extra-info">
+            {{ form.extra_info.label }}
+            <p>{{ form.extra_info }}</p>
+        </div>
+        <input type="submit" value="Записаться">
+    </form>
+    <script>
+        var inp = document.getElementById("id_phone_number");
+
+        inp.onclick = function() {
+            inp.value = "+7";
+        }
+
+        var old = 0;
+
+        inp.onkeydown = function() {
+            var curLen = inp.value.length;
+
+            if (curLen < old){
+              old--;
+              return;
+              }
+
+            if (curLen == 2)
+                inp.value = inp.value + "(";
+
+            if (curLen == 6)
+                inp.value = inp.value + ")-";
+
+            if (curLen == 11)
+                inp.value = inp.value + "-";
+
+            if (curLen == 14)
+                inp.value = inp.value + "-";
+
+            if (curLen > 16)
+                inp.value = inp.value.substring(0, inp.value.length - 1);
+
+            old++;
+    }
+    </script>
+{% endblock %}

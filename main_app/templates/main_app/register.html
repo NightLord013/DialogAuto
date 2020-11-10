@@ -1,0 +1,46 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Регистрация пользователя - Dialog Expert</title>
+    <link rel="stylesheet" href="{% static 'css/register.css' %}">
+</head>
+<body>
+<div id="logo">
+    <img src="{% static 'img/logotype.png' %}">
+</div>
+<div class="element">
+    <div class="login">
+        <p>Есть аккаунт?</p>
+        <p><a href="{% url 'login' %}">Войти</a></p>
+    </div>
+    <form method="POST" action="{% url 'register' %}">
+        <h5>Регистрация</h5>
+        {% csrf_token %}
+        <div class="email">
+            <p>Email:<span>*</span></p>
+            {{ form.email }}
+        </div>
+        <div class="full_name">
+            <p>ФИО:<span>*</span></p>
+            {{ form.full_name }}
+        </div>
+        <div class="phone">
+            <p>Номер телефона:<span>*</span></p>
+            {{ form.phone }}
+        </div>
+        <div class="password1">
+            <p>Пароль:<span>*</span></p>
+            {{ form.password1 }}
+        </div>
+        <div class="password2">
+            <p>Повторите пароль:<span>*</span></p>
+            {{ form.password2 }}
+        </div>
+        <div class="submit">
+            <input type='submit' value="Зарегестрироваться">
+        </div>
+    </form>
+</div>
+</body>
+</html>
