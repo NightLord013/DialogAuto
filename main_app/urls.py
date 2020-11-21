@@ -13,4 +13,7 @@ urlpatterns = [
     path('register/', views.registration, name='register'),
     path('logout/', LogoutView.as_view(next_page='home'), name='logout'),
     path('personal-account/', PasswordChangeView.as_view(template_name='main_app/personal_account.html', success_url=reverse_lazy('home')), name='personal_account'),
+    path('add/', views.add_new_entry, name='add'),
+    path('all_clients/', views.all_clients, name='all_clients'),
+    path('zayavki_na_test-drive/', views.test_drive_requests, name='test_drive_requests'),
 ]

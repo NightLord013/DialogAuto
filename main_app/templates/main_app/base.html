@@ -19,7 +19,14 @@
         </div>
 
         <div id = 'private'>
-            <a href="{% url 'personal_account' %}"><img src="{% static 'img/private.png' %}" align="top">Личный кабинет</a>
+            <a href="{% url 'personal_account' %}">
+                {% if user.is_staff %}
+                <img src="{% static 'img/admin.png' %}" align="top">
+                {% else %}
+                <img src="{% static 'img/private.png' %}" align="top">
+                {% endif %}
+                Личный кабинет
+            </a>
         </div>
         {% else %}
          <div id="login">
@@ -36,6 +43,14 @@
         <a href="{% url 'about_company' %}">О компании</a>
         <a href="{% url 'contacts' %}">Контакты</a>
     </div>
+    {% if user.is_staff %}
+    <div class="admin-links">
+        <a href="{% url 'add' %}">Добавить</a>
+        <a href="{% url 'test_drive_requests' %}">Заявки на тест-драйв</a>
+        <a href="{% url 'about_company' %}">Записи на ТО</a>
+        <a href="{% url 'all_clients' %}">Все клиенты</a>
+    </div>
+    {% endif %}
     {% block content %}{% endblock %}
     <footer>
         <div class="social_networks">

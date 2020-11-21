@@ -1,0 +1,95 @@
+.links, .admin-links {
+    background-color: #747776;
+    text-align: center;
+    margin-bottom: 3vw;
+    height: 2.15vw;
+}
+
+.links a, .admin-links a {
+    text-decoration: none;
+    color: black;
+    font-size: 1.8vw;
+    margin-left: 1.5vw;
+    margin-right: 1.5vw;
+    font-family: 'Poppins', sans-serif;
+    position: relative;
+    top: 0.1vw;
+}
+
+h5 {
+    font-size: 3vw;
+    font-weight: 700;
+    margin: 0;
+    margin-left: 8vw;
+    margin-bottom: 5vw;
+    margin-top: 4vw;
+}
+
+.text-info {
+    margin-left: 10vw;
+    display: inline-block;
+}
+
+.text-info p{
+    margin: 0;
+}
+
+.text-info p{
+    font-size: 2vw;
+}
+
+.text-info p input, .text-info p select{
+    margin-left: 3vw;
+    font-size: 1.5vw;
+}
+
+.text-info p input {
+    width: 24vw;
+    height: 1.5vw;
+    padding-left: 1vw;
+}
+
+.text-info p select{
+    width: 25.5vw;
+    height: 2vw;
+    padding-left: 1vw;
+}
+
+.photo-info {
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 17%;
+    margin-left: 20vw;
+}
+
+.photo-info p{
+    font-size: 2vw;
+    margin: 0;
+}
+
+.photo-info input{
+    margin-left: 3vw;
+    width: 20vw;
+}
+
+#buttons{
+    margin-top: 2vw;
+    margin-bottom: 3vw;
+    text-align: right;
+}
+
+input[type='submit']{
+    margin-right: 6vw;
+}
+
+input[type='submit'], input[type='reset']{
+    background-color: #446FAE;
+    color: black;
+    width: 12vw;
+    font-size: 1.6vw;
+    border: 2px solid black;
+}
+
+input[type='submit']:hover, input[type='reset']:hover{
+    background-color: #547FBE;
+}

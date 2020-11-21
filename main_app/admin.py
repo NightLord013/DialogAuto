@@ -26,23 +26,27 @@ class UserAdmin(DjangoUserAdmin):
     search_fields = ('email', 'full_name')
     ordering = ('email',)
 
+
 @admin.register(AutoBrand)
 class BrandAdmin(admin.ModelAdmin):
     list_display = ('brand_name',)
+
 
 @admin.register(AutoModels)
 class BrandAdmin(admin.ModelAdmin):
     list_display = ('model_name',)
 
+
 @admin.register(AutoCharacters)
 class ModelAdmin(admin.ModelAdmin):
     list_display = ('brand', 'model', 'engine', 'power')
+
 
 @admin.register(TechnicalService)
 class BookingAdmin(admin.ModelAdmin):
     list_display = ('name', 'surname', 'brand', 'model', 'data', 'time', 'phone_number')
 
+
 @admin.register(TestDriveModel)
 class TestDriveAdmin(admin.ModelAdmin):
     list_display = ('name', 'surname', 'brand', 'model', 'data', 'time', 'phone_number')
-

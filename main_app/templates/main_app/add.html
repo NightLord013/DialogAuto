@@ -1,0 +1,77 @@
+{% extends 'main_app/base.html' %}
+{% load static %}
+
+{% block title %}Добавление{% endblock %}
+{% block style %}{% static 'css/add_style.css' %}{% endblock %}
+
+{% block content %}
+
+    <h5>Добавление новой записи</h5>
+    <form method="POST" action="{% url 'add' %}" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="text-info">
+            <p>{{ form.brand.label }}:</p>
+            <p>{{ form.brand }}</p>
+            <p>{{ form.model.label }}:</p>
+            <p>{{ form.model }}</p>
+            <p>{{ form.engine.label }}:</p>
+            <p>{{ form.engine }}</p>
+            <p>{{ form.power.label }}:</p>
+            <p>{{ form.power }}</p>
+            <p>{{ form.transmission.label }}:</p>
+            <p>{{ form.transmission }}</p>
+            <p>{{ form.drive_wheel.label }}:</p>
+            <p>{{ form.drive_wheel }}</p>
+            <p>{{ form.body_type.label }}:</p>
+            <p>{{ form.body_type }}</p>
+            <p>{{ form.color.label }}:</p>
+            <p>{{ form.color }}</p>
+            <p>{{ form.year.label }}:</p>
+            <p>{{ form.year }}</p>
+            <p>{{ form.mileage.label }}:</p>
+            <p>{{ form.mileage }}</p>
+            <p>{{ form.steering_wheel.label }}:</p>
+            <p>{{ form.steering_wheel }}</p>
+            <p>{{ form.price.label }}:</p>
+            <p>{{ form.price }}</p>
+            <p>{{ form.discount.label }}:</p>
+            <p>{{ form.discount }}</p>
+        </div>
+        <div class="photo-info">
+            <p>{{ form.main_photo.label }}:</p>
+            <p>{{ form.main_photo }}</p>
+            <p>{{ form.photo_2.label }}:</p>
+            <p>{{ form.photo_2 }}</p>
+            <p>{{ form.photo_3.label }}:</p>
+            <p>{{ form.photo_3 }}</p>
+            <p>{{ form.photo_4.label }}:</p>
+            <p>{{ form.photo_4 }}</p>
+        </div>
+        <div id="buttons">
+            <input type="reset" value="Сбросить">
+            <input type="submit" value="Опубликовать">
+        </div>
+    </form>
+<script type="text/javascript">
+    $('#id_brand').on("change", function (){
+        ab = $('#id_brand').val();
+        console.log("a =", ab);
+        $.ajax(
+            {
+                type: 'GET',
+                url: "{% url 'add' %}",
+                data: {brand: ab},
+                success: function (data){
+                    ipt = ''
+                    for (i in data){
+                        console.log(data[i])
+                        ipt+=('<option value=' + data[i] + '>'+ i + '</option>')
+                    }
+                    $('#id_model').html('<select>' + ipt + '</select>')
+
+                }
+            }
+        )
+    })
+</script>
+{% endblock %}

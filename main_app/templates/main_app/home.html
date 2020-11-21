@@ -5,7 +5,8 @@
 
 {% block content %}
     <section class="filter" xmlns="http://www.w3.org/1999/html">
-        <form method="get">
+        <form method="POST">
+            {% csrf_token %}
             <div class="choose-brand-and-model">
                 <p>{{ form.brand.label }}</p>
                 <p>{{ form.brand }}</p>
@@ -60,8 +61,10 @@
         {% endif %}
         {% for p in page.paginator.page_range %}
             {% if p == page.number %}
+                <a style="border: 3px solid blue" href="?page={{ p }}">{{ p }}</a>
+            {% elif p|add:'1' == page.number %}
                 <a href="?page={{ p }}">{{ p }}</a>
-            {% else %}
+            {% elif p|add:'-1' == page.number %}
                 <a href="?page={{ p }}">{{ p }}</a>
             {% endif %}
         {% endfor %}
@@ -69,4 +72,26 @@
             <a href="?page={{ page.next_page_number }}">&gt;</a>
         {% endif %}
     </div>
+    <script type="text/javascript">
+    $('#id_brand').on("change", function (){
+        ab = $('#id_brand').val();
+        console.log("a =", ab);
+        $.ajax(
+            {
+                type: 'GET',
+                url: "{% url 'home' %}",
+                data: {brand: ab},
+                success: function (data){
+                    ipt = ''
+                    for (i in data){
+                        console.log(data[i])
+                        ipt+=('<option value=' + data[i] + '>'+ i + '</option>')
+                    }
+                    $('#id_model').html('<select>' + ipt + '</select>')
+
+                }
+            }
+        )
+    })
+</script>
 {% endblock %}

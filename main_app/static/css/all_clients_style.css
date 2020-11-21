@@ -1,0 +1,65 @@
+.links, .admin-links {
+    background-color: #747776;
+    text-align: center;
+    margin-bottom: 3vw;
+    height: 2.15vw;
+}
+
+.links a, .admin-links a {
+    text-decoration: none;
+    color: black;
+    font-size: 1.8vw;
+    margin-left: 1.5vw;
+    margin-right: 1.5vw;
+    font-family: 'Poppins', sans-serif;
+    position: relative;
+    top: 0.1vw;
+}
+
+h5 {
+    font-size: 3vw;
+    font-weight: 700;
+    margin: 0;
+    margin-left: 8vw;
+    margin-bottom: 5vw;
+    margin-top: 4vw;
+}
+
+.all_users {
+    margin-left: 5vw;
+    margin-right: 5vw;
+    margin-bottom: 2vw;
+    font-size: 1.6vw;
+}
+
+.all_users table{
+    border-collapse: collapse;
+    background-color: #C2C2C2;
+    width: 100%;
+}
+
+.all_users table td{
+    border: 1px solid black;
+    text-align: center;
+}
+
+.all_users table td:first-child{
+    width: 5%;
+}
+
+.all_users table td:nth-child(2){
+    width: 35%;
+}
+
+.all_users table td:nth-child(3){
+    width: 30%;
+}
+
+.all_users table td:nth-child(4){
+    width: 15%;
+}
+
+.all_users table td img{
+    width: 2vw;
+    margin-top: 0.2vw;
+}

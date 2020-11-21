@@ -1,0 +1,23 @@
+{% extends 'main_app/base.html' %}
+{% load static %}
+
+{% block title %}Записи на тест-драйв{% endblock %}
+{% block style %}{% static 'css/test_drive_requests.css' %}{% endblock %}
+
+{% block content %}
+    <h5>Заявки на тест-драйв</h5>
+    <div class="main">
+    {% for i in all_entry %}
+         <div class="entry">
+             <p>Клиент - {{ i.surname }} {{ i.name }} {{ i.patronymic }}</p>
+             <p>Номер теелфона клиента: {{ i.phone_number }}</p>
+             <p>Авто: {{ i.brand }} {{ i.model }}</p>
+             <p>Дата: {{ i.data|date:'d.m.Y' }}</p>
+             <p>Время: {{ i.time|time:'H:i' }}</p>
+         </div>
+            {% for j in a %}
+                {{ a.values }}
+                {% endfor %}
+    {% endfor %}
+    </div>
+{% endblock %}

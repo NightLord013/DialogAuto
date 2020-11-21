@@ -41,6 +41,12 @@
             <input type='submit' value="Зарегестрироваться">
         </div>
     </form>
+    {% for us in users %}
+        {{ us.full_name }}
+        {{ us.email }}
+        {{ us.last_login }}
+        {{ us.date_of_joined }}
+    {% endfor %}
 </div>
 </body>
 </html>

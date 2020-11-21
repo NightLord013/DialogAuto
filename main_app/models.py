@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import AbstractUser, BaseUserManager
 from django.utils.translation import ugettext_lazy as _
 
+
 class UserManager(BaseUserManager):
     """Define a model manager for User model with no username field."""
 
@@ -35,6 +36,7 @@ class UserManager(BaseUserManager):
 
         return self._create_user(email, password, **extra_fields)
 
+
 class User(AbstractUser):
     """User model."""
     username = None
@@ -47,6 +49,7 @@ class User(AbstractUser):
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = []
 
+
 class AutoBrand(models.Model):
     brand_name = models.CharField(max_length=30, verbose_name="Марка")
 
@@ -56,6 +59,7 @@ class AutoBrand(models.Model):
     class Meta:
         verbose_name = 'Марка'
         verbose_name_plural = 'Марки'
+
 
 class AutoModels(models.Model):
     brand = models.ForeignKey(AutoBrand, on_delete=models.CASCADE, verbose_name='Марка')
@@ -67,6 +71,7 @@ class AutoModels(models.Model):
     class Meta:
         verbose_name = 'Модель'
         verbose_name_plural = 'Модели'
+
 
 class AutoCharacters(models.Model):
     CHOOSE_TRANSMISSION = (
@@ -99,14 +104,16 @@ class AutoCharacters(models.Model):
     model = models.ForeignKey(AutoModels, on_delete=models.CASCADE, verbose_name="Модель", related_name='mmodel')
     engine = models.CharField(max_length=15, null=True, blank=True, verbose_name="Двигатель(литров)")
     power = models.IntegerField(null=True, blank=True, verbose_name="Мощность")
-    transmission = models.CharField(max_length=15, choices=CHOOSE_TRANSMISSION, default='механическая', verbose_name="Трансмиссия")
+    transmission = models.CharField(max_length=15, choices=CHOOSE_TRANSMISSION, default='механическая',
+                                    verbose_name="Трансмиссия")
     drive_wheel = models.CharField(max_length=10, choices=CHOOSE_DRIVE_WHEEL, default='передний', verbose_name="Привод")
     body_type = models.CharField(max_length=15, choices=CHOOSE_BODY_TYPE, default='седан', verbose_name="Тип кузова")
     color = models.CharField(max_length=20, verbose_name="Цвет")
     year = models.CharField(max_length=4, verbose_name="Год")
     mileage = models.IntegerField(verbose_name="Пробег")
     steering_wheel = models.CharField(max_length=8, choices=CHOOSE_STEERING_WHEEL, default='левый', verbose_name="Руль")
-    engine_type = models.CharField(max_length=20, choices=CHOOSE_TYPE_OF_ENGINE, default='бензин', verbose_name='Тип двигателя')
+    engine_type = models.CharField(max_length=20, choices=CHOOSE_TYPE_OF_ENGINE, default='бензин',
+                                   verbose_name='Тип двигателя')
     price = models.IntegerField(verbose_name='Цена')
     discount = models.IntegerField(verbose_name='Скидочная цена')
     main_photo = models.ImageField(verbose_name="Главное фото")
@@ -114,11 +121,12 @@ class AutoCharacters(models.Model):
     photo_3 = models.ImageField(null=True, blank=True, verbose_name="Дополнительное фото 2")
     photo_4 = models.ImageField(null=True, blank=True, verbose_name="Дополнительное фото 3")
     description = models.TextField(verbose_name='Описание', default='Нет описания')
-    is_favorite = models.BooleanField(default=False, verbose_name='В "Избранных"')
+    is_favorite = models.BooleanField(default=False, blank=True, verbose_name='В "Избранных"')
 
     class Meta:
         verbose_name = 'Характеристика'
         verbose_name_plural = 'Характеристики'
+
 
 class TechnicalService(models.Model):
     name = models.CharField(max_length=20, verbose_name="Имя")
@@ -134,6 +142,7 @@ class TechnicalService(models.Model):
     class Meta:
         verbose_name = "Запись на ТО"
         verbose_name_plural = 'Записи на ТО'
+
 
 class TestDriveModel(models.Model):
     name = models.CharField(max_length=20, verbose_name='Имя')
