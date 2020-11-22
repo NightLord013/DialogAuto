@@ -5,6 +5,7 @@ from django.contrib.auth.forms import UserCreationForm, UserChangeForm
 import pendulum
 
 
+
 class CarFilterForm(forms.Form):
     brand = forms.ModelChoiceField(queryset=AutoBrand.objects.all(), label="Марка", required=False)
     model = forms.ModelChoiceField(queryset=AutoModels.objects.all(), label="Модель", required=False)
@@ -28,7 +29,7 @@ class TechnicalServiceForm(forms.ModelForm):
 class TestDriveForm(forms.ModelForm):
     class Meta:
         model = TestDriveModel
-        fields = ('name', 'surname', 'patronymic', 'brand', 'model', 'data', 'time', 'phone_number', 'extra_info')
+        fields = ('name', 'surname', 'patronymic', 'brand', 'model', 'data', 'time', 'phone_number', 'extra_info', 'photo')
         widgets = {'data': DateInput(attrs={'type': 'date', 'min': pendulum.now().to_date_string(),
                                             'max': pendulum.now().add(days=2).to_date_string()}),
                    'time': TimeInput(format='H:m', attrs={'type': 'time', 'min': '09:00', 'max': '20:00'}),

@@ -23,34 +23,5 @@ h5 {
     margin-left: 8vw;
     margin-bottom: 5vw;
     margin-top: 4vw;
-}
-
-.entry {
-    border: 1px solid black;
-    padding: 0.8vw;
-    margin-right: 9vw;
-    margin-left: 9vw;
-    margin-bottom: 3vw;
-    font-size: 2.3vw;
-}
-
-.entry p {
-    margin: 0;
-}
-
-.entry .text-info{
-    display: inline-block;
-    vertical-align: top;
-}
-
-.entry #photo{
-    display: inline-block;
-}
-
-
-.entry #photo img {
-    width: 21vw;
-    position: relative;
-    top: 0.2vw;
-    margin-left: 15vw;
+    height: 30vw;
 }

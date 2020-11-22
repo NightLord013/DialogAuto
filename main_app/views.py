@@ -1,9 +1,9 @@
 from django.shortcuts import render, redirect
 from django.http import JsonResponse
-from .models import AutoCharacters, AutoBrand, AutoModels, User, TestDriveModel
+from .models import AutoCharacters, AutoBrand, AutoModels, User, TestDriveModel, TechnicalService
 from .forms import CarFilterForm, TechnicalServiceForm, TestDriveForm, UserRegisterForm, AddEntryForm
 from django.core.paginator import Paginator
-from django.contrib.auth.decorators import login_required
+from django.contrib.auth.decorators import login_required, user_passes_test
 # from django.contrib.auth.models import User
 from django.views.decorators.cache import cache_page
 from django.core import serializers
@@ -11,7 +11,7 @@ from django.core import serializers
 
 def home(request):
     cars = AutoCharacters.objects.all()
-    form = CarFilterForm(request.POST)
+    form = CarFilterForm(request.GET)
     if form.is_valid():
         if form.cleaned_data["brand"]:
             cars = cars.filter(brand=form.cleaned_data["brand"])
@@ -30,15 +30,15 @@ def home(request):
         page_num = request.GET['page']
     else:
         page_num = 1
-    if request.GET.get('brand'):
+    page = paginator.get_page(page_num)
+    if 'brand' in request.POST:
         data = {}
-        qwe = AutoModels.objects.filter(brand=request.GET.get('brand'))
+        qwe = AutoModels.objects.filter(brand=request.POST.get('brand'))
         for i in qwe:
             data.update({str(i): str(i.id)})
             print(data)
         return JsonResponse(data)
-    page = paginator.get_page(page_num)
-    context = {'form': form, 'page': page, 'cars': page.object_list}
+    context = {'form': form, 'page': page, 'cars': page.object_list, 'request': request}
     return render(request, 'main_app/home.html', context)
 
 
@@ -71,6 +71,7 @@ def test_drive(request, car_id):
             per = form.save(commit=False)
             per.brand = car.brand  # изменение данных
             per.model = car.model  # изменение данных
+            per.photo = car.main_photo.url  # путь к фото авто
             form.save()
             return redirect('home')
     else:
@@ -103,6 +104,8 @@ def registration(request):
     return render(request, 'main_app/register.html', {'form': form})
 
 
+@cache_page(60 * 5)
+@user_passes_test(lambda user: user.is_staff)
 def add_new_entry(request):
     if request.method == 'POST':
         form = AddEntryForm(request.POST, request.FILES)
@@ -120,13 +123,24 @@ def add_new_entry(request):
             return JsonResponse(data)
     return render(request, 'main_app/add.html', {'form': form})
 
+
+@user_passes_test(lambda user: user.is_staff)
 def all_clients(request):
     all_users = User.objects.all()
     return render(request, 'main_app/all_clients.html', {'all_users': all_users})
 
+
+@user_passes_test(lambda user: user.is_staff)
 def test_drive_requests(request):
     all_entry = TestDriveModel.objects.all()
-    a = {}
-    for i in all_entry:
-        a.update({str(AutoCharacters.objects.get(id=i.id)): AutoCharacters.objects.get(id=i.id).main_photo})
-    return render(request, 'main_app/test_drive_requests.html', {'all_entry': all_entry, 'a': a})
+    return render(request, 'main_app/test_drive_requests.html', {'all_entry': all_entry})
+
+
+@user_passes_test(lambda user: user.is_staff)
+def tec_servise_requests(request):
+    all_entry = TechnicalService.objects.all().order_by('data', 'time')
+    return render(request, 'main_app/technical_service_requests.html', {'all_entry': all_entry})
+
+@cache_page(60 * 5)
+def page_ist_developed(request):
+    return render(request, 'main_app/page_ist_developed.html')

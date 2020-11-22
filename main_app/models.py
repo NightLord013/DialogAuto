@@ -150,11 +150,13 @@ class TestDriveModel(models.Model):
     patronymic = models.CharField(max_length=20, verbose_name="Отчество")
     brand = models.ForeignKey(AutoBrand, on_delete=models.CASCADE, null=True, blank=True, verbose_name='Марка')
     model = models.ForeignKey(AutoModels, on_delete=models.CASCADE, null=True, blank=True, verbose_name='Модель')
+    photo = models.TextField(null=True, blank=True, verbose_name='Фото')
     data = models.DateField(verbose_name='Предпочиемые дата записи')
     time = models.TimeField(verbose_name='Предпочитаемое время записи')
     phone_number = models.CharField(max_length=17, verbose_name="Номер телефона")
     extra_info = models.TextField(null=True, blank=True, verbose_name='Допонительная информация')
 
     class Meta:
+        ordering = ('data', 'time')
         verbose_name = "Запись на тест-драйв"
         verbose_name_plural = 'Записи на тест-драйв'

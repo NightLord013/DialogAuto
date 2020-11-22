@@ -15,7 +15,7 @@
         </div>
         {% if user.is_authenticated %}
         <div id = 'favorite'>
-            <a href="#"><img src="{% static 'img/favorite.png' %}" align="top">Избранные</a>
+            <a href="{% url 'page_ist_developed' %}"><img src="{% static 'img/favorite.png' %}" align="top">Избранные</a>
         </div>
 
         <div id = 'private'>
@@ -47,31 +47,31 @@
     <div class="admin-links">
         <a href="{% url 'add' %}">Добавить</a>
         <a href="{% url 'test_drive_requests' %}">Заявки на тест-драйв</a>
-        <a href="{% url 'about_company' %}">Записи на ТО</a>
+        <a href="{% url 'tec_servise_requests' %}">Записи на ТО</a>
         <a href="{% url 'all_clients' %}">Все клиенты</a>
     </div>
     {% endif %}
     {% block content %}{% endblock %}
     <footer>
         <div class="social_networks">
-            <a href="#"><img src="{% static 'img/vk_logo.png' %}"></a>
-            <a href="#"><img src="{% static 'img/instagram_logo.png' %}"></a>
-            <a href="#"><img src="{% static 'img/twitter_logo.png' %}"></a>
+            <a href="https://vk.com/dialogauto"><img src="{% static 'img/vk_logo.png' %}"></a>
+            <a href="https://www.instagram.com/dialogauto_chelny/"><img src="{% static 'img/instagram_logo.png' %}"></a>
+            <a href="https://www.instagram.com/dialogauto_chelny/"><img src="{% static 'img/twitter_logo.png' %}"></a>
         </div>
         <div class="first-list-links">
-            <p><a href="#">Новости</a></p>
+            <p><a href="{% url 'page_ist_developed' %}">Новости</a></p>
             <p><a href="{% url 'about_company' %}">О компании</a></p>
-            <p><a href="#">Вакансии</a></p>
-            <p><a href="#">Акции</a></p>
-            <p><a href="#">Карта сайта</a></p>
-            <p><a href="#">Как добраться?</a></p>
+            <p><a href="{% url 'page_ist_developed' %}">Вакансии</a></p>
+            <p><a href="{% url 'page_ist_developed' %}">Акции</a></p>
+            <p><a href="{% url 'page_ist_developed' %}">Карта сайта</a></p>
+            <p><a href="{% url 'page_ist_developed' %}">Как добраться?</a></p>
         </div>
         <div class="second-list-links">
             <p><a href="{% url 'home' %}">Автомобили</a></p>
-            <p><a href="#">Сервис</a></p>
-            <p><a href="#">Страхование</a></p>
-            <p><a href="#">Кредитование</a></p>
-            <p><a href="#">Трайв-ин</a></p>
+            <p><a href="{% url 'page_ist_developed' %}">Сервис</a></p>
+            <p><a href="{% url 'page_ist_developed' %}">Страхование</a></p>
+            <p><a href="{% url 'page_ist_developed' %}">Кредитование</a></p>
+            <p><a href="{% url 'page_ist_developed' %}">Трайд-ин</a></p>
         </div>
     </footer>
     <script>

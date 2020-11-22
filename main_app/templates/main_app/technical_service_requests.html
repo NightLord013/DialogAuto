@@ -1,0 +1,20 @@
+{% extends 'main_app/base.html' %}
+{% load static %}
+
+{% block title %}Записи на ТО{% endblock %}
+{% block style %}{% static 'css/tec_sersice_style.css' %}{% endblock %}
+
+{% block content %}
+    <h5>Записи на ТО</h5>
+    <div class="main">
+    {% for i in all_entry %}
+         <div class="entry">
+             <p>Клиент - {{ i.surname }} {{ i.name }} {{ i.patronymic }}</p>
+             <p>Номер телефона клиента: <a style="text-decoration: none; color: black" href="tel:{{ i.phone_number }}">{{ i.phone_number }}</a></p>
+             <p>Авто: {{ i.brand }} {{ i.model }}</p>
+             <p>Дата: {{ i.data|date:'d.m.Y' }}</p>
+             <p>Время: {{ i.time|time:'H:i' }}</p>
+         </div>
+    {% endfor %}
+    </div>
+{% endblock %}

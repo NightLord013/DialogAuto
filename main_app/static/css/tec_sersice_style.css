@@ -25,32 +25,23 @@ h5 {
     margin-top: 4vw;
 }
 
+.main {
+    margin-right: 7vw;
+    margin-left: 7vw;
+}
+
 .entry {
     border: 1px solid black;
     padding: 0.8vw;
-    margin-right: 9vw;
-    margin-left: 9vw;
+    width: 20vw;
+    margin-left: 2.9vw;
+    margin-right: 2.9vw;
     margin-bottom: 3vw;
-    font-size: 2.3vw;
+    font-size: 1.8vw;
+    display: inline-block;
+    background-color: #C2C2C2;
 }
 
 .entry p {
     margin: 0;
-}
-
-.entry .text-info{
-    display: inline-block;
-    vertical-align: top;
-}
-
-.entry #photo{
-    display: inline-block;
-}
-
-
-.entry #photo img {
-    width: 21vw;
-    position: relative;
-    top: 0.2vw;
-    margin-left: 15vw;
 }

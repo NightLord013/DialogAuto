@@ -35,6 +35,10 @@ header #favorite a{
     color: black;
 }
 
+header #favorite a:hover{
+    color: #999;
+}
+
 header #favorite a img {
     width: 1.8vw;
     margin-right: 0.5vw;
@@ -51,6 +55,10 @@ header #private {
 header #private a{
     text-decoration: none;
     color: black;
+}
+
+header #private a:hover{
+    color: #999;
 }
 
 header #private a img {
@@ -104,8 +112,9 @@ header #login a img {
     display: none;
 }
 
-.links a:hover {
+.links a:hover, .admin-links a:hover {
     color: #444444;
+    cursor: pointer;
 }
 
 

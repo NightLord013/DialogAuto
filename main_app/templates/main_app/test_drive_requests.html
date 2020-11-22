@@ -9,15 +9,15 @@
     <div class="main">
     {% for i in all_entry %}
          <div class="entry">
-             <p>Клиент - {{ i.surname }} {{ i.name }} {{ i.patronymic }}</p>
-             <p>Номер теелфона клиента: {{ i.phone_number }}</p>
-             <p>Авто: {{ i.brand }} {{ i.model }}</p>
-             <p>Дата: {{ i.data|date:'d.m.Y' }}</p>
-             <p>Время: {{ i.time|time:'H:i' }}</p>
+             <div class="text-info">
+                 <p>Клиент - {{ i.surname }} {{ i.name }} {{ i.patronymic }}</p>
+                 <p>Номер телефона клиента: <a style="text-decoration: none; color: black" href="tel:{{ i.phone_number }}">{{ i.phone_number }}</a></p>
+                 <p>Авто: {{ i.brand }} {{ i.model }}</p>
+                 <p>Дата: {{ i.data|date:'d.m.Y' }}</p>
+                 <p>Время: {{ i.time|time:'H:i' }}</p>
+             </div>
+             <p id="photo"><img src="{{ i.photo }}"></p>
          </div>
-            {% for j in a %}
-                {{ a.values }}
-                {% endfor %}
     {% endfor %}
     </div>
 {% endblock %}
